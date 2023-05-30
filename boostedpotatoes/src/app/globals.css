@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  justify-content: center;
+}
+
+.carouselcontainer {
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.paginationindex {
+  display: flex;
+  margin: auto;
+  width: 15%;
+  align-items: center;
+  text-align: center;
+
+}
+
+.swap {
+  position: relative;
+  display: inline-block;
+}
+
+.swap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+}
+
+.swap-off {
+  display: none;
+}
+
+.swap-on {
+  display: block;
+}
+
+
+#navbar {
+  position: fixed;
+  padding: 4px;
+  background-color: white;
+  color: black;
+  display: flex;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+#navbar.hidden {
+  transform: translateY(-100%);
+}
+
+main {
+  padding-top: 80px;
+}
+
+#heart-movieUnit .heart {
+  max-width: unset;
+}
+
+#stars_movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
